@@ -1,0 +1,38 @@
+{
+  "name": "webinar-serverless-framework-aws",
+  "version": "1.0.0",
+  "description": "Webinar serverless framework AWS",
+  "repository": {
+    "type": "git",
+    "url": "git@github.com:renatomattos2912/webinar-serverless-framework-aws.git"
+  },
+  "main": "handler.js",
+  "scripts": {
+    "dev": "sls offline start",
+    "deploy": "sls deploy",
+    "undeploy": "sls remove"
+  },
+  "keywords": [],
+  "author": "Renato Mattos <renatomattos2912@gmail.com>",
+  "license": "MIT",
+  "dependencies": {
+    "axios": "^0.19.0",
+    "faunadb": "^2.10.0",
+    "moment": "^2.24.0",
+    "underscore.string": "^3.3.5",
+    "uuid": "^3.3.3",
+    "winston": "^3.2.1"
+  },
+  "devDependencies": {
+    "aws-sdk": "^2.591.0",
+    "cross-env": "^6.0.3",
+    "eslint": "^6.7.2",
+    "eslint-config-standard": "^14.1.0",
+    "eslint-plugin-import": "^2.19.1",
+    "eslint-plugin-node": "^10.0.0",
+    "eslint-plugin-promise": "^4.2.1",
+    "eslint-plugin-standard": "^4.0.1",
+    "serverless": "^1.59.3",
+    "serverless-offline": "^5.12.1"
+  }
+}

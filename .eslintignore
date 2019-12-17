@@ -1,0 +1,6 @@
+.git
+public
+node_modules
+tmp
+.env
+.serverless

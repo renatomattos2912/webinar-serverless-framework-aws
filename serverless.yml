@@ -1,0 +1,75 @@
+service: webinar-serverless-framework-aws
+
+plugins:
+  - serverless-offline
+
+provider:
+  name: awsx
+  runtime: nodejs12.x
+  region: us-east-1
+  stage: dev
+  memorySize: 128
+  timeout: 30
+  environment: ${file(env.yml)}
+  iamRoleStatements:
+    - Effect: 'Allow'
+      Resource: '*'
+      Action:
+        - 'secretsmanager:*'
+  apiKeys:
+    - API_KEY
+
+functions:
+  # V1
+  ## Place
+  placeAdd:
+    handler: src/app/v1/place/place.controller.placeAdd
+    events:
+      - http:
+          path: /api/v1/place
+          method: post
+          cors: true
+          private: true
+  placeGet:
+    handler: src/app/v1/place/place.controller.placeGet
+    events:
+      - http:
+          path: /api/v1/place/{id}
+          method: get
+          cors: true
+          private: true
+  placeGetAll:
+    handler: src/app/v1/place/place.controller.placeGetAll
+    events:
+      - http:
+          path: /api/v1/place
+          method: get
+          cors: true
+          private: true
+  placeUpdate:
+    handler: src/app/v1/place/place.controller.placeUpdate
+    events:
+      - http:
+          path: /api/v1/place/{id}
+          method: put
+          cors: true
+          private: true
+  placeDel:
+    handler: src/app/v1/place/place.controller.placeDel
+    events:
+      - http:
+          path: /api/v1/place/{id}
+          method: delete
+          cors: true
+          private: true
+
+  # V2
+  ## Place
+  placeGetAllV2:
+    handler: src/app/v2/place/place.controller.placeGetAll
+    events:
+      - http:
+          path: /api/v2/place
+          method: get
+          cors: true
+          private: true
