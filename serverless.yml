@@ -4,12 +4,10 @@ plugins:
   - serverless-offline
 
 provider:
-  name: awsx
-  runtime: nodejs12.x
+  name: aws
+  runtime: nodejs8.10
   region: us-east-1
   stage: dev
-  memorySize: 128
-  timeout: 30
   environment: ${file(env.yml)}
   iamRoleStatements:
     - Effect: 'Allow'
