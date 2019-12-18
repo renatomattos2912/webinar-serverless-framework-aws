@@ -12,6 +12,7 @@ A simple CRUD app using serverless framework, AWS and FaunaDB.
 - Instal serverless framework CLI.
 - Create a FaunaDB account.
 - Set FaunaDB secret key in AWS secrets manager.
+- Set Postman to make api calls (Check postmand folder inside docs)
 
 ## Secrets to set in AWS
 
