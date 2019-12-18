@@ -10,10 +10,10 @@ provider:
   stage: dev
   environment: ${file(env.yml)}
   iamRoleStatements:
-    - Effect: 'Allow'
-      Resource: '*'
+    - Effect: "Allow"
+      Resource: "*"
       Action:
-        - 'secretsmanager:*'
+        - "secretsmanager:*"
   apiKeys:
     - API_KEY
 
@@ -21,7 +21,7 @@ functions:
   # V1
   ## Place
   placeAdd:
-    handler: src/app/v1/place/place.controller.placeAdd
+    handler: src/app/v1/place/index.placeAdd
     events:
       - http:
           path: /api/v1/place
@@ -29,7 +29,7 @@ functions:
           cors: true
           private: true
   placeGet:
-    handler: src/app/v1/place/place.controller.placeGet
+    handler: src/app/v1/place/index.placeGet
     events:
       - http:
           path: /api/v1/place/{id}
@@ -37,7 +37,7 @@ functions:
           cors: true
           private: true
   placeGetAll:
-    handler: src/app/v1/place/place.controller.placeGetAll
+    handler: src/app/v1/place/index.placeGetAll
     events:
       - http:
           path: /api/v1/place
@@ -45,7 +45,7 @@ functions:
           cors: true
           private: true
   placeUpdate:
-    handler: src/app/v1/place/place.controller.placeUpdate
+    handler: src/app/v1/place/index.placeUpdate
     events:
       - http:
           path: /api/v1/place/{id}
@@ -53,7 +53,7 @@ functions:
           cors: true
           private: true
   placeDel:
-    handler: src/app/v1/place/place.controller.placeDel
+    handler: src/app/v1/place/index.placeDel
     events:
       - http:
           path: /api/v1/place/{id}
